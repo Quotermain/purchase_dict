@@ -1,7 +1,6 @@
-
+purchases = dict()
 
 def purchase_file_to_dict(file_to_process):
-    purchases = dict()
     with open(file_to_process) as f:
         next(f)
         for line in f:
@@ -12,4 +11,6 @@ def purchase_file_to_dict(file_to_process):
     return purchases
 
 if __name__ == "__main__":
-    print(purchase_file_to_dict("purchase_log.txt"))
+    purchase_file_to_dict("purchase_log.txt")
+    for k,v in purchases.items():
+        print(k, f"'{v}'")
